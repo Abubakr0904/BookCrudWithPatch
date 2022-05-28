@@ -39,12 +39,11 @@ public class BookController : ControllerBase
         => await _bookService.UpdateAsync(book.ToEntity());
 
     [HttpPatch]
-    public async Task<IActionResult> UpdateAsync(Guid id, [FromBody]JsonPatchDocument<BookModel> patch)
+    public async Task<IActionResult> UpdateAsync(Guid id, [FromBody]JsonPatchDocument<Book> patch)
     {
         var entity = await _bookService.GetByIdAsync(id);
         var original = entity.Copy();
-        var newModel = entity.ToModel();
-        patch.ApplyTo(newModel, ModelState);
+        patch.ApplyTo(entity, ModelState);
 
         var isValid = TryValidateModel(entity);
         if (!isValid)
@@ -52,11 +51,11 @@ public class BookController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        await _bookService.UpdateAsync(newModel.ToEntity(original));
+        await _bookService.UpdateAsync(entity);
         var result = new
         {
             Original = original.ToModel(),
-            Updated = newModel
+            Updated = entity.ToModel()
         };
 
         return Ok(result);
