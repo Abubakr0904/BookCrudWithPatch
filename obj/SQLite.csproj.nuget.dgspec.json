@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shuhr\\Desktop\\backend\\SQLite\\SQLite.csproj": {}
+    "D:\\Developer\\lessons\\Book\\Book\\SQLite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shuhr\\Desktop\\backend\\SQLite\\SQLite.csproj": {
+    "D:\\Developer\\lessons\\Book\\Book\\SQLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shuhr\\Desktop\\backend\\SQLite\\SQLite.csproj",
+        "projectUniqueName": "D:\\Developer\\lessons\\Book\\Book\\SQLite.csproj",
         "projectName": "SQLite",
-        "projectPath": "C:\\Users\\shuhr\\Desktop\\backend\\SQLite\\SQLite.csproj",
-        "packagesPath": "C:\\Users\\shuhr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shuhr\\Desktop\\backend\\SQLite\\obj\\",
+        "projectPath": "D:\\Developer\\lessons\\Book\\Book\\SQLite.csproj",
+        "packagesPath": "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\",
+        "outputPath": "D:\\Developer\\lessons\\Book\\Book\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\shuhr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abubakr.Bakhramov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

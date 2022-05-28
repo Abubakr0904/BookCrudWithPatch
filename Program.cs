@@ -1,22 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using SQLite.Entities;
+using SQLite.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<BookDbContext>(options =>
 {
-    options.UseSqlite("Data Source=book.db");
+    options.UseSqlite(builder.Configuration.GetConnectionString("SQLiteConnection"));
 }, ServiceLifetime.Singleton);
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddScoped<IBookService, BookService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

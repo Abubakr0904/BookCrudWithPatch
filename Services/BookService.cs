@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SQLite.Entities;
 
 namespace SQLite.Services;
@@ -13,32 +14,35 @@ public class BookService : IBookService
     }
     public async Task AddAsync(Book newBook)
     {
-        await _context.SaveChangesAsync();
         await _context.Books.AddAsync(newBook);
+        await _context.SaveChangesAsync();
     }
 
     public async Task DeleteAsync(Guid id)
     {
         var book = await GetByIdAsync(id);
-        await _context.SaveChangesAsync();
+        if (book == null)
+        {
+            _logger.LogWarning("Book with id {id} not found", id);
+            return;
+        }
+
         _context.Books.Remove(book);
+        await _context.SaveChangesAsync();
     }
 
-    public Task<List<Book>> GetAllAsync()
-    {
-        var books = _context.Books.ToList<Book>();
-        return null;
-    }
+    public async Task<List<Book>> GetAllAsync()
+        => await _context.Books.ToListAsync();
 
     public async Task<Book> GetByIdAsync(Guid id)
-    {
-        var book = _context.Books.FirstOrDefault(b => b.Id == id);
-        return book;
-    }
+         => _context.Books.FirstOrDefault(b => b.Id == id);
 
     public async Task UpdateAsync(Book book)
     {
-        _context.Update(book);
+        var bookToUpdate = await GetByIdAsync(book.Id);
+        bookToUpdate.Name = book.Name;
+        bookToUpdate.Title = book.Title;
+        
         await _context.SaveChangesAsync();
     }
 }
