@@ -1,18 +1,17 @@
 using SQLite.Entities;
-using SQLite.Models;
 
 namespace SQLite.Mappers;
 
-public static class EntityToModelMappers
+public static class AdditionalMappers
 {
-    public static BookModel ToModel(this Book entity)
+    public static Book Copy(this Book entity)
     {
         if(entity == null)
         {
             return null;
         }
         
-        return new BookModel
+        return new Book
         {
             Id = entity.Id,
             Name = entity.Name,

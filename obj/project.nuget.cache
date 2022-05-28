@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9KKEHFkemTWz8lPWQNZfE0aJPcPthcdU1nC/yJicCyFHUwVqnRDOLOspwa63QzzFrGBpwC+dhNH6zzP4Iy2g9g==",
+  "dgSpecHash": "XJ5/nZrlstLE9OqOf0Iphs2iS9Kvwj4Z2ZMei8d7iWHH6AD8/pGLIrlH6yBrdp+tEN0zElztj6rOwkwuCpvr+A==",
   "success": true,
   "projectFilePath": "D:\\Developer\\lessons\\Book\\Book\\SQLite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.5\\microsoft.aspnetcore.jsonpatch.6.0.5.nupkg.sha512",
+    "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.5\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.5.nupkg.sha512",
+    "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.5\\microsoft.data.sqlite.core.6.0.5.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.5\\microsoft.entityframeworkcore.6.0.5.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.5\\microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512",
@@ -25,6 +28,8 @@
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Abubakr.Bakhramov\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",

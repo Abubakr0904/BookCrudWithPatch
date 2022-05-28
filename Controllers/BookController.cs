@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using SQLite.Entities;
+using SQLite.Mappers;
 using SQLite.Models;
 using SQLite.Services;
 
@@ -9,7 +11,6 @@ namespace SQLite.Controller;
 [Route("books")]
 public class BookController : ControllerBase
 {
-    private readonly ILogger<BookController> _logger;
     private readonly IBookService _bookService;
 
     public BookController(IBookService bookService)
@@ -19,15 +20,15 @@ public class BookController : ControllerBase
 
     [HttpGet]
     public async Task<IEnumerable<BookModel>> GetAllAsync()
-        => (await _bookService.GetAllAsync()).Select(book => (BookModel)book);
+        => (await _bookService.GetAllAsync()).Select(book => book.ToModel());
 
     [HttpGet("{id}")]
     public async Task<BookModel> GetByIdAsync(Guid id)
-        => (BookModel) await _bookService.GetByIdAsync(id);
+        => (await _bookService.GetByIdAsync(id)).ToModel();
 
     [HttpPost("create")]
     public async Task AddAsync(CreateBookModel newBook)
-        => await _bookService.AddAsync((Book) newBook);
+        => await _bookService.AddAsync(newBook.ToEntity());
 
     [HttpDelete("delete/{id}")]
     public async Task DeleteAsync(Guid id)
@@ -35,5 +36,29 @@ public class BookController : ControllerBase
     
     [HttpPut("update/{id}")]
     public async Task UpdateAsync(Guid id, BookModel book)
-        => await _bookService.UpdateAsync((Book) book);
+        => await _bookService.UpdateAsync(book.ToEntity());
+
+    [HttpPatch]
+    public async Task<IActionResult> UpdateAsync(Guid id, [FromBody]JsonPatchDocument<BookModel> patch)
+    {
+        var entity = await _bookService.GetByIdAsync(id);
+        var original = entity.Copy();
+        var newModel = entity.ToModel();
+        patch.ApplyTo(newModel, ModelState);
+
+        var isValid = TryValidateModel(entity);
+        if (!isValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        await _bookService.UpdateAsync(newModel.ToEntity(original));
+        var result = new
+        {
+            Original = original.ToModel(),
+            Updated = newModel
+        };
+
+        return Ok(result);
+    }
 }

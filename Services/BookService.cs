@@ -35,14 +35,14 @@ public class BookService : IBookService
         => await _context.Books.ToListAsync();
 
     public async Task<Book> GetByIdAsync(Guid id)
-         => _context.Books.FirstOrDefault(b => b.Id == id);
+         => await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
 
     public async Task UpdateAsync(Book book)
     {
         var bookToUpdate = await GetByIdAsync(book.Id);
         bookToUpdate.Name = book.Name;
         bookToUpdate.Title = book.Title;
-        
+
         await _context.SaveChangesAsync();
     }
 }

@@ -106,3 +106,7 @@ D:\Developer\lessons\Book\Book\obj\Debug\net6.0\scopedcss\bundle\SQLite.styles.c
 D:\Developer\lessons\Book\Book\obj\Debug\net6.0\SQLite.csproj.CopyComplete
 D:\Developer\lessons\Book\Book\obj\Debug\net6.0\SQLite.genruntimeconfig.cache
 D:\Developer\lessons\Book\Book\obj\Debug\net6.0\ref\SQLite.dll
+D:\Developer\lessons\Book\Book\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Developer\lessons\Book\Book\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Developer\lessons\Book\Book\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Developer\lessons\Book\Book\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
